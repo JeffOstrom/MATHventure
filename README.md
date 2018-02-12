@@ -1,12 +1,13 @@
 
 # MATHventure
 
+## Synopsis:
 
 ## Team Members:
 
-+ Denise Erazmus - 
++ Denise Erazmus - (https://github.com/derazmus)
 + Jeff Ostrom - (https://github.com/JeffOstrom)
-+ Kelvin Tiongson - 
++ Kelvin Tiongson - (https://github.com/tiongsonkj)
 + Chris
 
 
