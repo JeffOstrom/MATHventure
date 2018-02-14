@@ -1,0 +1,28 @@
+#jumbotron {
+	background-color: black;
+}
+body {
+	background-color: white;
+}
+
+#logo {
+	display: block;
+   /* margin-left: auto;*/
+  /*  margin-right: auto;*/
+    width: 100%;
+}
+
+#button {
+	color: white;
+	background: black;
+	border: .05rem solid black;
+	border: .05rem solid black;
+}
+
+#jumbotron {
+	background: white;
+}
+
+#playerButtons {
+	margin-top: 15%;
+}
