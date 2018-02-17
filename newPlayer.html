@@ -7,8 +7,6 @@
   <title>MATHventure</title>
   <!--css-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <!--javascript-->
-  <script type='text/javascript' src="assets/javascript/form.js"></script>
   <!--bootstrap4-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -20,35 +18,36 @@
   <div class="row">
     <div class="col-md-4 login-sec">
         <h2 class="text-center">New Player</h2>
-        <form class="login-form">
+        <form class="newplayer-form">
   <div class="form-group">
-    <label for="exampleInputEmail1" class="text-uppercase">Username</label>
-    <input type="text" class="form-control" placeholder="">
+    <label for="userName" class="text">Username</label>
+    <input type="text" class="form-control" id = "userName" placeholder="" required="">
     
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-    <input type="password" class="form-control" placeholder="">
+    <label for="password" class="text">Password</label>
+    <input type="password" class="form-control" id = "newPassword" placeholder="" required="">
   </div>
 
   <div class="form-group">
-    <label for="exampleInputPassword1" class="text-uppercase">Confirm Password</label>
-    <input type="password" class="form-control" placeholder="">
+    <label for="confirmPassword" class="text">Confirm Password</label>
+    <input type="password" class="form-control" id = "confirmPassword" placeholder="" required="" onkeyup="checkPass(); return false;">
+    <span id= "confirmMessage" class= "confirmMessage"></span>
   </div>
 
   <div class="form-group">
-    <label for="dob" class="text-uppercase">Birthday</label>
-    <input type="password" class="form-control" placeholder="">
+    <label for="dob" class="date">Birthday</label>
+    <input type="date" class="form-control" id = "birthdate" placeholder="" required="">
   </div>
 
   <div class="form-group">
-    <label for="dob" class="text-uppercase">Parents Email address</label>
-    <input type="password" class="form-control" placeholder="">
+    <label for="dob" class="text">Parents Email address</label>
+    <input type="email" class="form-control" id = "email" placeholder="">
   </div>
   
   
     <div class="form-check">
-    <button type="submit" class="btn btn-login float-right">Submit</button>
+    <button type="submit" class="btn btn-login float-right" id="btnSubmit" value="Submit">Submit</button>
   </div>
   
 </form>
@@ -68,5 +67,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--javascript-->
+<script type='text/javascript' src="assets/javascript/form.js"></script>
 
 </html>
