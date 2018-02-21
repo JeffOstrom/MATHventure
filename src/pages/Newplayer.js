@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./assets/css/style.css"
+import logo from "./assets/images/mv.png"
 
 const Newplayer = () =>
     <div>
@@ -45,7 +46,7 @@ const Newplayer = () =>
                     </div>
 
                     <div className="col-md-8 banner-sec">
-                        <img id="logo" src="./assets/images/mv.png" alt="mathventure"></img>
+                        <img id="logo" src={logo} alt="mathventure"></img>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,7 @@ import Mathtype from "./pages/Mathtype";
 import Addition from "./pages/Addition";
 import Correct from "./pages/Correct";
 import Incorrect from "./pages/Incorrect";
+import Subtraction from "./pages/Subtraction";
 
 const App = () => 
     <Router>
@@ -16,6 +17,7 @@ const App = () =>
             <Route exact path="/addition" component={Addition} />
             <Route exact path="/correct" component={Correct} />
             <Route exact path="/incorrect" component={Incorrect} />
+            <Route exact path="/subtraction" component={Subtraction} />
         </div>
     </Router>;
 
