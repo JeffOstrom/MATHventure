@@ -36,6 +36,7 @@ const Newplayer = () =>
                             </div>
 
                             <div className="form-check">
+                                <br></br>
                                 <Link className="btn btn-login float-right" id="btnSubmit" value="Submit" type="submit" to="/mathtype">
                                     Submit
                                 </Link>

@@ -1,13 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./assets/css/style.css"
+import "./assets/css/style.css";
+import mv from  './assets/images/mv.png'
+
+
 
 const Home = () =>
     <div id="jumbotron" className="container-fluid">
         <div id="jumbotron" className="jumbotron jumbotron-fluid">
             <div className="row">
                 <div className="col-6 offset-sm-1">
-                    <img id="logo" src="./assets/images/mv.png" alt="mathventure"/>
+                    <img src={mv} className="mv" alt="logo" />
                 </div>	
 
                 <div id="playerButtons" className="col-3 offset-sm-1">
