@@ -3,8 +3,8 @@ import "./RadioButtons.css"
 
 const RadioButtons = props => (
         <label onClick={props.handleClick}
-            className={`radio-inline btn btn-warning mx-3`}
-        ><input type="radio" name="optradio" {...props}></input>
+            className={`radio-inline btn btn-warning mx-3 color`}
+        ><input type="radio" name="optradio" className="buttonNumber" {...props}></input>
 
         {props["data-value"]}
         
