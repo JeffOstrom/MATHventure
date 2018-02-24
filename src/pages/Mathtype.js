@@ -17,7 +17,10 @@ const Mathtype = () =>
                                 </div>
 
                                 <div className="col-6">
-                                    <button type="button" class="btn btn-secondary btn-lg btn-block">Subtraction</button>
+                                      <Link type="button" className="btn btn-secondary btn-lg btn-block" to="/subtraction">
+                                        Subtraction
+                                      </Link>
+                                  
                                 </div>
 
                                 <div className="col login-sec">
