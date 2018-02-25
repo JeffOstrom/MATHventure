@@ -10,17 +10,26 @@ class newPlayerForm extends React.Component {
             name: '',
             userName: '',
             password: '',
-            age: '',
+            confirmPassword: '',
+            checkbox: '',
             parentsEmail: ''
         };
 
     //validatePassword = () => if name === 'password'
 
     handleInputChange = (event) => {
-        const {name, value} = event.target;
+        const {name,value} = event.target;
+        const {password } = event.target;
+        const {confirmPassword} = event.target;
+        const {checkbox} = event.target;
+        const {email} = event.target
        // this.validatePassword(name, value)
         this.setState({
-            [name]: value
+            [name]: value,
+            [password]: value,
+            [confirmPassword]: value,
+            [checkbox]: value,
+            [email]: value
         });
     }
 
@@ -33,8 +42,17 @@ render(){
                             <div className="col-md-4 login-sec">
                                  <h2 className="text-center">New Player</h2>
                                     <form className="newplayer-form">
+                                         <div className="form-group">
+                                            <label for="name" className="text">Name:
+                                                 <input
+                                                    name="name"
+                                                    type= "text"
+                                                    onChange={this.handleInputChange}
+                                                    value={this.state.name}/>
+                                            </label>
+                                        </div>
                                         <div className="form-group">
-                                            <label for="userName" className="text">Username
+                                            <label for="userName" className="text">Username:
                                                  <input
                                                     name="userName"
                                                     type= "text"
@@ -42,64 +60,64 @@ render(){
                                                     value={this.state.userName}/>
                                             </label>
                                         </div>
-                                     </form>
+
+                                        <div className="form-group">
+                                            <label for="password" className="text">Password:
+                                                <input 
+                                                    name= "password"
+                                                    type= "password"
+                                                    onChange={this.handleInputChange}
+                                                    value={this.state.password}/>
+                                            </label>
+                                        </div>
+
+                                        <div className="form-group">
+                                            <label for="password" className="text"> Confirm Password:
+                                                <input 
+                                                    name= "confirmPassword"
+                                                    type= "password"
+                                                    onChange={this.handleInputChange}
+                                                    value={this.state.confirmPassword}/>
+                                            </label>
+                                        </div>
+
+                                        <div className="form-check">
+                                                <label for="checkbox" class="checkbox-inline">Check box if you are over age of 10
+                                                 <input 
+                                                    name= "checkbox"
+                                                    type= "checkbox"
+                                                    onChange={this.handleInputChange}
+                                                    value={this.state.checkbox}/>
+                                                </label>
+                                        </div> 
+
+                                        <div className="form-group">
+                                                <label for="checkbox" class="email">Parents Email address:
+                                                 <input 
+                                                    name= "email"
+                                                    type= "email"
+                                                    onChange={this.handleInputChange}
+                                                    value={this.state.email}/>
+                                                </label>
+                                        </div>
+                                        
+
+
+                                        <div class="form-check">
+                                                <label type="button" class="btn btn-login float-right" id="btnSubmit" value = "done">Submit</label>
+                                        </div>
+  
+                                    </form>
+                                </div>
+                                        <div className="col-md-8 banner-sec">
+                                                <img id="logo" src={logo} alt="mathventure"></img>
+                                        </div>
                             </div>
                         </div>
-                    </div>
-                </section>
-            </div>
-       );
+                    </section>
+                </div>
+             );
+        }
     }
-}
-
-   // <div>
-        //<section className="login-block">
-            //<div className="container">
-                //<div className="row">
-                    //<div className="col-md-4 login-sec">
-                       // <h2 className="text-center">New Player</h2>
-                       // <form class="newplayer-form">
-                           // <div className="form-group">
-                              //  <label for="userName" className="text">Username</label>
-                              //  <input type="text" className="form-control" id="userName" placeholder="" required=""></input>
-                           // </div>
-                            
-                           // <div className="form-group">
-                              // <label for="password" className="text">Password</label>
-                              // <input type="password" className="form-control" id="newPassword" placeholder="" required=""></input>
-                            //</div>
-
-                           // <div>
-                               // <label for="confirmPassword" className="text">Confirm Password</label>
-                               //<input type="password" className="form-control" id="confirmPassword" placeholder="" required="" onkeyup="checkPass(); return false;"></input>
-                           //</div>
-
-                           // <div>
-                               // <label for="dob" className="date">Birthday</label>
-                               // <input type="date" className="form-control" id="birthdate" placeholder="" required=""></input>
-                            //</div>
-
-                           //<div>
-                                //<label for="dob" className="text">Parents Email address</label>
-                                //<input type="email" className="form-control" id="email" placeholder=""></input>
-                           //</div>
-
-                           // <div className="form-check">
-                                //<Link className="btn btn-login float-right" id="btnSubmit" value="Submit" type="submit" to="/mathtype">
-                                   // Submit
-                                //</Link>
-                                
-                            //</div>
-                       // </form>
-                   // </div>
-
-                    //<div className="col-md-8 banner-sec">
-                       // <img id="logo" src={logo} alt="mathventure"></img>
-                   //</div>
-               // </div>
-            //</div>
-       //</section>
-    //</div>
-//;
-
+    
 export default newPlayerForm;
