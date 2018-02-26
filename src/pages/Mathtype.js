@@ -8,7 +8,7 @@ const Mathtype = () =>
             <div className="container">
                 <div className="row">
                     <div className="col login-sec">
-                        <h2 id="textMathType" className="text-center">Choose a Math Type</h2>
+                        <h2 id="textMathType" className="text-center">Choose a MATHventure!</h2>
                             <div className="row">
                                 <div className="col-6">
                                     <Link type="button" className="btn btn-secondary btn-lg btn-block" to="/addition">
@@ -26,11 +26,11 @@ const Mathtype = () =>
                                 <div className="col login-sec">
                                     <div className="row">
                                         <div className="col-6">
-                                            <button type="button" class="btn btn-secondary btn-lg btn-block">Multiplication</button>
+                                            <button type="button" className="btn btn-secondary btn-lg btn-block">Multiplication</button>
                                         </div>
 
                                         <div className="col-6">
-                                            <button type="button" class="btn btn-secondary btn-lg btn-block">Division</button>
+                                            <button type="button" className="btn btn-secondary btn-lg btn-block">Division</button>
                                         </div>
                                     </div>
                                 </div>

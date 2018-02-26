@@ -1,7 +1,12 @@
 import React from "react";
 
-const SubmitBtn = () =>
-    <button className={`submit btn btn-success btn-lg text-center`}>
+const SubmitBtn = props =>
+    <button 
+        className={`btn btn-success btn-lg text-center`} 
+        onSubmit={props.onSubmit}
+        type={`submit`}
+        {...props}
+    >
         Submit
     </button>
 ;
