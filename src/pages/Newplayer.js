@@ -19,17 +19,9 @@ class newPlayerForm extends React.Component {
 
     handleInputChange = (event) => {
         const {name,value} = event.target;
-        const {password } = event.target;
-        const {confirmPassword} = event.target;
-        const {checkbox} = event.target;
-        const {email} = event.target
-       // this.validatePassword(name, value)
+       
         this.setState({
-            [name]: value,
-            [password]: value,
-            [confirmPassword]: value,
-            [checkbox]: value,
-            [email]: value
+            [name]: value
         });
     }
 
@@ -82,7 +74,7 @@ render(){
                                         </div>
 
                                         <div className="form-check">
-                                                <label for="checkbox" class="checkbox-inline">Check box if you are over age of 10
+                                                <label for="checkbox" className="checkbox-inline">Check box if you are over age of 10
                                                  <input 
                                                     name= "checkbox"
                                                     type= "checkbox"
@@ -92,7 +84,7 @@ render(){
                                         </div> 
 
                                         <div className="form-group">
-                                                <label for="checkbox" class="email">Parents Email address:
+                                                <label for="checkbox" className="email">Parents Email address:
                                                  <input 
                                                     name= "email"
                                                     type= "email"
@@ -103,21 +95,21 @@ render(){
                                         
 
 
-                                        <div class="form-check">
-                                                <label type="button" class="btn btn-login float-right" id="btnSubmit" value = "done">Submit</label>
+                                        <div className="form-check">
+                                                <label type="button" className="btn btn-login float-right" id="btnSubmit" value = "done">Submit</label>
                                         </div>
   
                                     </form>
                                 </div>
                                         <div className="col-md-8 banner-sec">
-                                                <img id="logo" src={logo} alt="mathventure"></img>
-                                        </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-             );
-        }
-    }
-    
+                            <img id="logo" src={logo} alt="mathventure"></img>
+                   </div>
+               </div>
+            </div>
+       </section>
+    </div>
+ );
+}
+}
+
 export default newPlayerForm;
