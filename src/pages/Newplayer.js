@@ -11,7 +11,7 @@ class newPlayerForm extends React.Component {
             userName: '',
             password: '',
             confirmPassword: '',
-            checkbox: '',
+            checkbox: false,
             email: '',
             passwordsDontMatch: false
         };
@@ -27,8 +27,7 @@ class newPlayerForm extends React.Component {
         } else if (name === "confirmPassword"){
             passwordsDontMatch = value !== this.state.password
         }
-
-
+    
         this.setState({
             [name]: value,
             passwordsDontMatch
@@ -39,7 +38,7 @@ class newPlayerForm extends React.Component {
     passwordMatch = (event) => {
         event.preventDefault();
         //console.log("hi");
-        console.log(this.state.password,this.state.confirmPassword)
+        //console.log(this.state.password,this.state.confirmPassword)
         if(this.state.password === this.state.confirmPassword){
             this.setState({passwordsDontMatch:false})
             console.log('they match');
@@ -48,42 +47,17 @@ class newPlayerForm extends React.Component {
             this.setState({passwordsDontMatch:true})
         }
     
-    }  
+    }
 
-    // if(this.state.password == this.state.confirmPassword){
-    //     console.log('they match');
-    //The passwords match. 
-        //Set the color to the good color and inform
-        //the user that they have entered the correct password 
-        //confirmPassword.style.backgroundColor = goodColor;
-        //message.style.color = goodColor;
-        // message.innerHTML = "Passwords Match!"
-         // }else{
-        //The passwords do not match.
-        //Set the color to the bad color and
-        //notify the user.
-        //confirmPassword.style.backgroundColor = badColor;
-        //message.style.color = badColor;
-        // message.innerHTML = "Passwords Do Not Match!"
-        // }
-    // checkStatusLimit = (event) => {
-    //     const {status} = event.target.value.trim();
+    emailConfirm= (event)  => {
+        event.preventDefault();
+        if(this.checkbox = true){
+            this.setState({checkbox: true})
 
-    //     if(status.length >= 140){
-    //          React.findDOMNode(this.refs.status).value = status.substr(0,140);
-    //         event.preventDefault();
-    //         //trigger error 
-    //         console.log('aah.. Status is not a story!')
-    //     }
-    //  }
-
-    //  submitForm = (event) =>{
-    //     event.preventDefault();
-    //     // Dispatch an action or make an Ajax call to server using the state.
-    // }
-
-
-
+        } else {
+            this.setState({checkbox: false})
+        }
+    }
 
 render() {
 
@@ -115,14 +89,14 @@ render() {
                                         </div>
 
                                         <div className="form-group">
-                                            {this.state.passwordsDontMatch ? <h1> Oh No </h1> : ""}
+                                            
                                             <label htmlFor="password" className="text">Password:
                                                 <input 
                                                     name= "password"
                                                     type= "password"
                                                     onChange={this.handleInputChange}
                                                     value={this.state.password}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "lime"} 2px`}}/> 
+                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/> 
                                                     
                                             </label>
                                         </div> 
@@ -134,17 +108,21 @@ render() {
                                                     type= "password"
                                                     onChange={this.handleInputChange}
                                                     value={this.state.confirmPassword}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "lime"} 2px`}}/>
+                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
+                                                    {this.state.passwordsDontMatch ? <h7> Your passwords do not match.</h7> : ""}
                                             </label>
                                         </div>
 
                                         <div className="form-check">
-                                                <label htmlFor="checkbox" className="checkbox-inline">Check box if you are over age of 10
+                                                <label htmlFor="checkbox" className="checkbox" onChange={this.emailConfirm}>Please check this box if the parent would 
+                                                like a progress report emailed.
                                                  <input 
                                                     name= "checkbox"
                                                     type= "checkbox"
                                                     onChange={this.handleInputChange}
-                                                    value={this.state.checkbox}/>
+                                                    value={this.state.checkbox}
+                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
+                                                    {this.state.checkbox ? <h1> Email.</h1> : ""}
                                                 </label>
                                         </div> 
 
