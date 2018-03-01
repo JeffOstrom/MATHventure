@@ -5,7 +5,7 @@ import RadioButtons from "../components/RadioButtons";
 import "./addition.css"
 // import CorrectModal from "../components/CorrectModal";
 import additionprobs from "../additionproblems.json"
-
+import Timer from "../components/Timer/timer.js";
 
 
 class Addition extends Component {
@@ -132,6 +132,10 @@ class Addition extends Component {
                     <br />
                     <br />
                     <h1>Incorrect: {this.state.incorrect}</h1>
+                </div>
+
+                <div>
+                <h2> Time Remaining: <Timer time={10} checkAnswer={this.checkAnswer}/> </h2>
                 </div>
 
 
