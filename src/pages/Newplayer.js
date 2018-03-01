@@ -109,7 +109,7 @@ render() {
                                                     onChange={this.handleInputChange}
                                                     value={this.state.confirmPassword}
                                                     style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
-                                                    {this.state.passwordsDontMatch ? <h7> Your passwords do not match.</h7> : ""}
+                                                    {this.state.passwordsDontMatch ? <h6> Your passwords do not match.</h6> : ""}
                                             </label>
                                         </div>
 
@@ -122,21 +122,20 @@ render() {
                                                     onChange={this.handleInputChange}
                                                     value={this.state.checkbox}
                                                     style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
-                                                    {this.state.checkbox ? <h1> Email.</h1> : ""}
+                                                    {this.state.checkbox ?
+                                                        <div className="form-group">
+                                                            <label htmlFor="checkbox" className="email">Parents Email address:
+                                                                 <input 
+                                                                    name= "email"
+                                                                    type= "email"
+                                                                    onChange={this.handleInputChange}
+                                                                    value={this.state.email}/>
+                                                            </label>
+                                                        </div>
+                                                        
+                                                        : ""}
                                                 </label>
                                         </div> 
-
-                                        <div className="form-group">
-                                                <label htmlFor="checkbox" className="email">Parents Email address:
-                                                 <input 
-                                                    name= "email"
-                                                    type= "email"
-                                                    onChange={this.handleInputChange}
-                                                    value={this.state.email}/>
-                                                </label>
-                                        </div>
-                                        
-
 
                                         <div className="form-check">
                                                 <button className="btn btn-login float-right" id="btnSubmit" value = "done">Submit</button>
