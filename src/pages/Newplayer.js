@@ -41,9 +41,9 @@ class newPlayerForm extends React.Component {
         //console.log(this.state.password,this.state.confirmPassword)
         if(this.state.password === this.state.confirmPassword){
             this.setState({passwordsDontMatch:false})
-            console.log('they match');
+            //console.log('they match');
         } else {
-            console.log ('they dont match');
+           // console.log ('they dont match');
             this.setState({passwordsDontMatch:true})
         }
     
@@ -59,6 +59,36 @@ class newPlayerForm extends React.Component {
         }
     }
 
+    formComplete = (event) => {
+    event.preventDefault();
+// Conditions
+        if(this.state.name !== ''){
+       // console.log ("name is completed");
+        } else {
+        alert("name must be filled out");
+        return false;
+        //console.log("name is empty");
+        }
+
+        if(this.state.userName !== ''){
+        //console.log ("User name is completed");
+        } else {
+        alert("name must be filled out");
+        return false;
+        //console.log("User name is empty");
+        }
+
+        if(this.state.password !== ''){
+        alert("name must be filled out");
+        return false;
+        //console.log ("Password is completed");
+        } else {
+        alert("name must be filled out");
+        return false;
+        //console.log("Password is empty");
+        }
+    }
+
 render() {
 
     return (
@@ -68,10 +98,12 @@ render() {
                         <div className="row">
                             <div className="col-md-4 login-sec">
                                  <h2 className="text-center">New Player</h2>
-                                    <form className="newplayer-form" onSubmit={this.passwordMatch}>
+                                    <form className="newplayer-form" onSubmit={this.passwordMatch} onSubmit={this.formComplete}>
                                          <div className="form-group">
                                             <label htmlFor="name" className="text">Name:
+                                            <br></br>
                                                  <input
+                                                    placeholder= "name"
                                                     name="name"
                                                     type= "text"
                                                     onChange={this.handleInputChange}                                                   
@@ -80,7 +112,9 @@ render() {
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="userName" className="text">Username:
+                                            <br></br>
                                                  <input
+                                                    placeholder= "user name"
                                                     name="userName"
                                                     type= "text"
                                                     onChange={this.handleInputChange}
@@ -88,10 +122,11 @@ render() {
                                             </label>
                                         </div>
 
-                                        <div className="form-group">
-                                            
+                                        <div className="form-group">    
                                             <label htmlFor="password" className="text">Password:
+                                            <br></br>
                                                 <input 
+                                                    placeholder= "password"
                                                     name= "password"
                                                     type= "password"
                                                     onChange={this.handleInputChange}
@@ -103,7 +138,9 @@ render() {
 
                                         <div className="form-group">
                                             <label htmlFor="confirmPassword" className="text"> Confirm Password:
+                                            <br></br>
                                                 <input 
+                                                    placeholder= "confirm password"
                                                     name= "confirmPassword"
                                                     type= "password"
                                                     onChange={this.handleInputChange}
@@ -113,7 +150,7 @@ render() {
                                             </label>
                                         </div>
 
-                                        <div className="form-check">
+                                     <div className="form-check">
                                                 <label htmlFor="checkbox" className="checkbox" onChange={this.emailConfirm}>Please check this box if the parent would 
                                                 like a progress report emailed.
                                                  <input 
@@ -126,6 +163,7 @@ render() {
                                                         <div className="form-group">
                                                             <label htmlFor="checkbox" className="email">Parents Email address:
                                                                  <input 
+                                                                    placeholder= "parent@email.com"
                                                                     name= "email"
                                                                     type= "email"
                                                                     onChange={this.handleInputChange}
@@ -138,7 +176,7 @@ render() {
                                         </div> 
 
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value = "done">Submit</button>
+                                                <button className="btn btn-login float-right" id="btnSubmit" value = "done" to="/mathtype">Register Player</button>
                                         </div>
                                         
   
