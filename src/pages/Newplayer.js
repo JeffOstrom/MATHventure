@@ -14,7 +14,8 @@ class newPlayerForm extends React.Component {
             checkbox: false,
             email: '',
             passwordsDontMatch: false,
-            validation: false
+            validation: false,
+            button: false
         };
 
     // validatePassword = () => {
@@ -42,22 +43,30 @@ class newPlayerForm extends React.Component {
         //console.log(this.state.password,this.state.confirmPassword)
         if(this.state.password === this.state.confirmPassword){
             this.setState({passwordsDontMatch:false})
-            console.log('they match');
+            //console.log('they match');
         } else {
-           console.log ('they dont match');
+           //console.log ('they dont match');
             this.setState({passwordsDontMatch:true})
         }
 
-          if (this.state.name !== '' && this.state.userName !== '' && this.state.password !== ''){
-            console.log ("validation is done")
-            this.setState({validation: true})
+          if (this.state.name !== '' && this.state.userName !== '' && this.state.password !== '' && this.state.password === this.state.confirmPassword){
+            this.setState({button: true})
+            this.props.history.push("/mathtype");
         } else {
-            console.log ("validation not complete")
-            this.setState({validation: false})
+            //console.log ("validation not complete")
+            this.setState({button: false})
+            alert("form is not complete")
         }
 
-        this.props.history.push("/mathtype"); ///form to database
+        // if ({button:true}){
+        //  ///form to database
+        // } else {
+        //    // console.log("does not work")
+        // }
 
+        console.log(this.refs.name.value)
+        console.log(this.refs.username.value)
+        console.log(this.refs.password.value)
     }
 
 
@@ -97,6 +106,7 @@ render() {
                                             <label htmlFor="name" className="text">Name:
                                             <br></br>
                                                  <input
+                                                    ref= "name"
                                                     placeholder= "name"
                                                     name="name"
                                                     type= "text"
@@ -108,7 +118,8 @@ render() {
                                             <label htmlFor="userName" className="text">Username:
                                             <br></br>
                                                  <input
-                                                    placeholder= "user name"
+                                                    ref= "username"
+                                                    placeholder= "username"
                                                     name="userName"
                                                     type= "text"
                                                     onChange={this.handleInputChange}
@@ -120,6 +131,7 @@ render() {
                                             <label htmlFor="password" className="text">Password:
                                             <br></br>
                                                 <input 
+                                                    ref= "password"
                                                     placeholder= "password"
                                                     name= "password"
                                                     type= "password"
@@ -170,7 +182,7 @@ render() {
                                         </div> 
 
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done" onClick = {this.redirect}>Register Player</button>
+                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Register Player</button>
                                         </div>
   
                                     </form>
