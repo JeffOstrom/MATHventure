@@ -11,7 +11,7 @@ const Mathtype = () =>
                         <h2 id="textMathType" className="text-center">Choose a MATHventure!</h2>
                             <div className="row">
                                 <div className="col-6">
-                                    <Link type="button" className="btn btn-secondary btn-lg btn-block" to="/addition">
+                                    <Link type="button" className="btn btn-secondary btn-lg btn-block" to="/Level">
                                         Addition
                                     </Link>
                                 </div>
