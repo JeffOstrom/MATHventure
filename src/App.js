@@ -8,6 +8,7 @@ import Correct from "./pages/Correct";
 import Incorrect from "./pages/Incorrect";
 import Subtraction from "./pages/Subtraction";
 import Level from "./pages/Level";
+import Results from "./pages/Results"
 
 
 const App = () => 
@@ -21,6 +22,7 @@ const App = () =>
             <Route exact path="/incorrect" component={Incorrect} />
             <Route exact path="/subtraction" component={Subtraction} />
             <Route exact path="/Level" component={Level} />
+            <Route exact path="/Results" component={Results} />
         </div>
     </Router>;
 
