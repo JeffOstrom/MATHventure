@@ -13,7 +13,8 @@ class newPlayerForm extends React.Component {
             confirmPassword: '',
             checkbox: false,
             email: '',
-            passwordsDontMatch: false
+            passwordsDontMatch: false,
+            validation: false
         };
 
     // validatePassword = () => {
@@ -35,19 +36,30 @@ class newPlayerForm extends React.Component {
     }
 
 
-    passwordMatch = (event) => {
+    handleSubmit = (event) => {
         event.preventDefault();
         //console.log("hi");
         //console.log(this.state.password,this.state.confirmPassword)
         if(this.state.password === this.state.confirmPassword){
             this.setState({passwordsDontMatch:false})
-            //console.log('they match');
+            console.log('they match');
         } else {
-           // console.log ('they dont match');
+           console.log ('they dont match');
             this.setState({passwordsDontMatch:true})
         }
-    
+
+          if (this.state.name !== '' && this.state.userName !== '' && this.state.password !== ''){
+            console.log ("validation is done")
+            this.setState({validation: true})
+        } else {
+            console.log ("validation not complete")
+            this.setState({validation: false})
+        }
+
+        this.props.history.push("/mathtype"); ///form to database
+
     }
+
 
     emailConfirm= (event)  => {
         event.preventDefault();
@@ -59,35 +71,17 @@ class newPlayerForm extends React.Component {
         }
     }
 
-    formComplete = (event) => {
-    event.preventDefault();
-// Conditions
-        if(this.state.name !== ''){
-       // console.log ("name is completed");
-        } else {
-        alert("name must be filled out");
-        return false;
-        //console.log("name is empty");
-        }
-
-        if(this.state.userName !== ''){
-        //console.log ("User name is completed");
-        } else {
-        alert("name must be filled out");
-        return false;
-        //console.log("User name is empty");
-        }
-
-        if(this.state.password !== ''){
-        alert("name must be filled out");
-        return false;
-        //console.log ("Password is completed");
-        } else {
-        alert("name must be filled out");
-        return false;
-        //console.log("Password is empty");
-        }
-    }
+//     formComplete = (event) => {
+//     event.preventDefault();
+// // Conditions
+//         if (this.state.name !== '' && this.state.userName !== '' && this.state.password !== ''){
+//             console.log ("validation is done")
+//             this.setState({validation: true})
+//         } else {
+//             console.log ("validation not complete")
+//             this.setState({validation: false})
+//         }
+//     }
 
 render() {
 
@@ -98,7 +92,7 @@ render() {
                         <div className="row">
                             <div className="col-md-4 login-sec">
                                  <h2 className="text-center">New Player</h2>
-                                    <form className="newplayer-form" onSubmit={this.passwordMatch} onSubmit={this.formComplete}>
+                                    <form className="newplayer-form" onSubmit={this.handleSubmit}>
                                          <div className="form-group">
                                             <label htmlFor="name" className="text">Name:
                                             <br></br>
@@ -176,9 +170,8 @@ render() {
                                         </div> 
 
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value = "done" to="/mathtype">Register Player</button>
+                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done" onClick = {this.redirect}>Register Player</button>
                                         </div>
-                                        
   
                                     </form>
                                 </div>
