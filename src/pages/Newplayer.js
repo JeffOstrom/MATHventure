@@ -15,7 +15,7 @@ class newPlayerForm extends React.Component {
             email: '',
             passwordsDontMatch: false,
             validation: false,
-            button: false
+            button: true
         };
 
     // validatePassword = () => {
@@ -55,14 +55,9 @@ class newPlayerForm extends React.Component {
         } else {
             //console.log ("validation not complete")
             this.setState({button: false})
-            alert("form is not complete")
+            //alert("form is not complete")
         }
 
-        // if ({button:true}){
-        //  ///form to database
-        // } else {
-        //    // console.log("does not work")
-        // }
 
         console.log(this.refs.name.value)
         console.log(this.refs.username.value)
@@ -182,7 +177,13 @@ render() {
                                         </div> 
 
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Register Player</button>
+                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Register Player</button> 
+                                                        {this.state.button 
+                                                            ? ''
+                                                        
+                                                            : <h6> The form is not completed.</h6>
+                                                        
+                                                      }
                                         </div>
   
                                     </form>
