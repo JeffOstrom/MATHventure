@@ -9,13 +9,14 @@ class Results extends Component {
     render(){
       return(
         <div class="jumbotron jumbotron-fluid">
-        <div class="text-center">
-          <h1 class="display-4">MATHventure</h1>
-          <p class="lead">Results listed below</p>
+            <div class="text-center">
+             <h1 class="display-4">MATHventure</h1>
+             <p class="lead">Results listed below</p>
+            </div>
         </div>
-      </div>
-    );
-}
+        );
+        
+    }
 }
 
 
