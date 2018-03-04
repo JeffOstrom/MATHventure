@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import Home from "./pages/Home";
 import Newplayer from "./pages/Newplayer";
+import Returningplayer from "./pages/Returningplayer";
 import Mathtype from "./pages/Mathtype";
 import Addition from "./pages/Addition";
 import Correct from "./pages/Correct";
@@ -13,6 +14,7 @@ const App = () =>
         <div>
             <Route exact path="/" component={Home} />
             <Route exact path="/newplayer" component={Newplayer} />
+             <Route exact path="/returningplayer" component={Returningplayer} />
             <Route exact path="/mathtype" component={Mathtype} />
             <Route exact path="/addition" component={Addition} />
             <Route exact path="/correct" component={Correct} />

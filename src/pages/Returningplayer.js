@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
 import logo from "./assets/images/mv.png"
 
-class newPlayerForm extends React.Component {
+class returningPlayerForm extends React.Component {
 
        state={
             name: '',
@@ -18,7 +18,8 @@ class newPlayerForm extends React.Component {
             button: true
         };
 
-
+    // validatePassword = () => {
+    //     if name === 'password'
 
     handleInputChange = (event) => {
         const {name,value} = event.target;
@@ -56,6 +57,7 @@ class newPlayerForm extends React.Component {
             this.setState({button: false})
             //alert("form is not complete")
         }
+
     }
 
 
@@ -69,6 +71,8 @@ class newPlayerForm extends React.Component {
         }
     }
 
+
+
 render() {
 
     return (
@@ -77,7 +81,7 @@ render() {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-4 login-sec">
-                                 <h2 className="text-center">New Player</h2>
+                                 <h2 className="text-center">Returing Player</h2>
                                     <form className="newplayer-form" onSubmit={this.handleSubmit}>
                                          <div className="form-group">
                                             <label htmlFor="name" className="text">Name:
@@ -133,33 +137,9 @@ render() {
                                             </label>
                                         </div>
 
-                                     <div className="form-check">
-                                                <label htmlFor="checkbox" className="checkbox" onChange={this.emailConfirm}>Please check this box if the parent would 
-                                                like a progress report emailed.
-                                                 <input 
-                                                    name= "checkbox"
-                                                    type= "checkbox"
-                                                    onChange={this.handleInputChange}
-                                                    value={this.state.checkbox}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
-                                                    {this.state.checkbox ?
-                                                        <div className="form-group">
-                                                            <label htmlFor="checkbox" className="email">Parents Email address:
-                                                                 <input 
-                                                                    placeholder= "parent@email.com"
-                                                                    name= "email"
-                                                                    type= "email"
-                                                                    onChange={this.handleInputChange}
-                                                                    value={this.state.email}/>
-                                                            </label>
-                                                        </div>
-                                                        
-                                                        : ""}
-                                                </label>
-                                        </div> 
-
+                                    
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Register Player</button> 
+                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Enter</button> 
                                                         {this.state.button 
                                                             ? ''
                                                         
@@ -181,4 +161,4 @@ render() {
 }
 }
 
-export default newPlayerForm;
+export default returningPlayerForm;
