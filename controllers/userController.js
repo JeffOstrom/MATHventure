@@ -10,11 +10,10 @@ router.post("/api/users", function(req, res) {
     // creating a user object
     const user = {
         name: req.body.name,
-        username: req.body.userName,
+        username: req.body.username,
         password: req.body.password,
     };
     console.log(user.username);
-    console.log(req.body.userName);
 
     // using the db we required and creating it with the user object
     db

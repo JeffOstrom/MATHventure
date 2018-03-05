@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 // creating new model for user
 // however, going to start off with required being false
 const userSchema = new Schema({
-	name: { type: String, required: false },
-	username: { type: String, required: false },
-	password: { type: String, required: false },
+	name: { type: String, required: true },
+	username: { type: String, required: true },
+	password: { type: String, required: true },
 	parentEmail: { type: Boolean, required: false },
 	addProgress: { type: Number, required: true, default: 1 },
 	subProgress: { type: Number, required: true, default: 1 },
