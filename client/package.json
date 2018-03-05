@@ -2,6 +2,7 @@
   "name": "reactpractice",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3030/",
   "dependencies": {
     "classnames": "^2.2.5",
     "form-serialize": "^0.7.2",

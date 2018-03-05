@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
 import logo from "./assets/images/mv.png"
+import axios from 'axios';
 
 class newPlayerForm extends React.Component {
 
@@ -69,6 +70,17 @@ class newPlayerForm extends React.Component {
         }
     }
 
+    // Method that handles the save user button. This is the submit button.
+    handleUserSave = () => {
+        axios.post('/api/users', {
+            name: this.state.name,
+            username: this.state.userName,
+            password: this.state.password
+        }).then(res => {
+            console.log(res);
+        }).catch(err => console.log(err));
+    };
+
 render() {
 
     return (
@@ -78,7 +90,7 @@ render() {
                         <div className="row">
                             <div className="col-md-4 login-sec">
                                  <h2 className="text-center">New Player</h2>
-                                    <form className="newplayer-form" onSubmit={this.handleSubmit}>
+                                    <form action='/newplayer' method='post' className="newplayer-form" onSubmit={this.handleSubmit}>
                                          <div className="form-group">
                                             <label htmlFor="name" className="text">Name:
                                             <br></br>
@@ -159,7 +171,7 @@ render() {
                                         </div> 
 
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Register Player</button> 
+                                                <button type='submit' className="btn btn-login float-right" id="btnSubmit" onClick={this.handleUserSave} value ="done">Register Player</button> 
                                                         {this.state.button 
                                                             ? ''
                                                         
