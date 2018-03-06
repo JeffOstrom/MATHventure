@@ -4,13 +4,13 @@ import RadioButtons from "../components/RadioButtons";
 // import { Link } from "react-router-dom";
 import "./addition.css"
 // import CorrectModal from "../components/CorrectModal";
-import subtractionprobs from "../subtractionproblems.json"
+import multiplicationprobs from "../multiplicationproblems.json"
 import Timer from "../components/Timer/timer.js";
 
 
-class Subtraction extends Component {
+class Multiplication extends Component {
     state = {
-        subtractionprobs,
+        multiplicationprobs,
         answer: "?",
         modal: "",
         question: "",
@@ -77,7 +77,7 @@ class Subtraction extends Component {
     componentDidMount() {
         // figure out how to assign object in state to value of another object in state
         // this.setState({currentProblem.firstNum: this.state.answers[0].firstNum});
-        const random = this.state.subtractionprobs[Math.floor(Math.random() * this.state.subtractionprobs.length)];
+        const random = this.state.multiplicationprobs[Math.floor(Math.random() * this.state.multiplicationprobs.length)];
 
         this.setState({ question: random.question});
         this.setState({ 
@@ -166,4 +166,4 @@ class Subtraction extends Component {
     }
 }
 
-export default Subtraction;
+export default Multiplication;
