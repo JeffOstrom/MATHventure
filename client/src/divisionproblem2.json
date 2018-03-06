@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "question": "20 / 5",
+        "choices": [10, 4, 55, 25],
+        "correct": 4
+    },
+    {
+        "id": 2,
+        "question": "30 / 2",
+        "choices": [20, 10, 15, 13],
+        "correct": 15
+    },
+    {
+        "id": 3,
+        "question": "8 / 2",
+        "choices": [8, 4, 7, 2],
+        "correct": 4
+    },
+    {
+        "id": 4,
+        "question": "4 / 4",
+        "choices": [7, 1, 2, 0],
+        "correct": 1
+    },
+    {
+        "id": 5,
+        "question": "9 / 1",
+        "choices": [9, 7, 8, 5],
+        "correct": 9
+    },
+    {
+        "id": 6,
+        "question": "14 / 2",
+        "choices": [1, 2, 7, 0],
+        "correct": 7
+    },
+    {
+        "id": 7,
+        "question": "3 / 3",
+        "choices": [2, 0, 4, 3],
+        "correct": 1
+    },
+    {
+        "id": 8,
+        "question": "10 / 2",
+        "choices": [3, 5, 6, 2],
+        "correct": 5
+    },
+    {
+        "id": 9,
+        "question": "9 / 9 ",
+        "choices": [2, 1, 2, 0],
+        "correct": 1
+    },
+    {
+        "id": 10,
+        "question": "10 / 2",
+        "choices": [10, 5, 8, 5],
+        "correct": 5
+    }
+]
