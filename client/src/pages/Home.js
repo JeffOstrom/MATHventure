@@ -17,7 +17,9 @@ const Home = () =>
                             New Player
                         </Link>
                         
-                        <button id="button" href="formReturningPlayer.html" className="btn btn-primary btn-lg btn-block">Returning Player</button>
+                         <Link id="button" className="btn btn-primary btn-lg btn-block" to="/returningplayer">
+                            Returning Player
+                        </Link>
                 </div>		
             </div>
  	    </div>
