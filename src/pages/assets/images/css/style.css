@@ -2,15 +2,16 @@
 #logo {
 	display: block;
     width: 100%;
+    border-radius: 25px;
     /*border: 2px dashed  #ffffff;
 	box-shadow: 0 0 0 8px #ff0030;*/
 }
 
 #button {
 	color: white;
-	background: #323232;
-	border: .05rem solid black;
-	border: .05rem solid black;
+	background: #2E8B57;
+	border: .05rem solid #ADD8E6;
+	border: .05rem solid #ADD8E6;
 	opacity: 0.8;
 	margin-bottom: 100px;
 
@@ -35,19 +36,19 @@
   box-shadow: 0px 0px 20px rgba(255,255,255,1);
 }
 
-#jumbotron {
-	background: white;
+body {
+	background: #BAB7A3;
 }
 
 #playerButtons {
-	margin-top: 15%;
+	margin-top: 10%;
 }
 
 /* form Returning Player*/
 
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
-    background: #323232;
+    background: #4FA887;
 background: -webkit-linear-gradient(to bottom, black, white);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to bottom, black, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 float:left;
@@ -55,14 +56,14 @@ width:100%;
 padding : 50px 0;
 }
 
-.container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
+.container{background:white; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
 .login-sec{padding: 50px 30px; position:relative;}
 .login-sec .copy-text{position:absolute; width:80%; bottom:20px; font-size:13px; text-align:center;}
-.login-sec .copy-text i{color: #323232;}
-.login-sec .copy-text a{color: #323232;}
+.login-sec .copy-text i{color: #81CFDF;}
+.login-sec .copy-text a{color: #81CFDF;}
 .login-sec h2{margin-bottom:30px; font-weight:800; font-size:30px; color: black}
 .login-sec h2:after{content:" "; width:100px; height:5px; background:black; display:block; margin-top:20px; border-radius:3px; margin-left:auto;margin-right:auto}
-.btn-login{background:  #323232; color:#fff; font-weight:600;}
+.btn-login{background:  #4FA887; color:#fff; font-weight:600;}
 
 .btn-login:hover {
 	opacity: 1;
@@ -84,5 +85,5 @@ padding : 50px 0;
 
 /*math type page*/
 #addition {
-	background-color: grey;
+	background-color: #669999;
 }
