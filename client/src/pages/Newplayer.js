@@ -2,12 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-<<<<<<< HEAD:src/pages/Newplayer.js
 import logo from "./assets/images/background.svg"
-=======
-import logo from "./assets/images/mv.png"
 import axios from 'axios';
->>>>>>> bbdab62a70e62a67cb6c6397fc4c13b0da20af14:client/src/pages/Newplayer.js
+
 
 class newPlayerForm extends React.Component {
 
@@ -93,13 +90,9 @@ render() {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-4 login-sec">
-<<<<<<< HEAD:src/pages/Newplayer.js
                                  <h2  id = "title" className="text-center">New Player</h2>
                                     <form className="newplayer-form" onSubmit={this.handleSubmit}>
-=======
-                                 <h2 className="text-center">New Player</h2>
-                                    <form action='/newplayer' method='post' className="newplayer-form" onSubmit={this.handleSubmit}>
->>>>>>> bbdab62a70e62a67cb6c6397fc4c13b0da20af14:client/src/pages/Newplayer.js
+
                                          <div className="form-group">
                                             <label htmlFor="name" className="text">Name:
                                             <br></br>
