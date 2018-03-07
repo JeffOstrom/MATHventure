@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import logo from "./assets/images/mv.png"
+import logo from "./assets/images/background.svg"
 
 class newPlayerForm extends React.Component {
 
@@ -77,7 +77,7 @@ render() {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-4 login-sec">
-                                 <h2 className="text-center">New Player</h2>
+                                 <h2  id = "title" className="text-center">New Player</h2>
                                     <form className="newplayer-form" onSubmit={this.handleSubmit}>
                                          <div className="form-group">
                                             <label htmlFor="name" className="text">Name:
@@ -171,7 +171,7 @@ render() {
                                     </form>
                                 </div>
                                         <div className="col-md-8 banner-sec">
-                            <img id="logo" src={logo} alt="mathventure"></img>
+                            <img id="logoFormNP" src={logo} alt="mathventure"></img>
                    </div>
                </div>
             </div>

@@ -1,11 +1,38 @@
 /*landing page*/
 #logo {
 	display: block;
-    width: 100%;
-    border-radius: 25px;
-    padding-top: 20px;
+   /* width: 100%;
+    border-radius: 10%;*/
+    padding-top: 10px;
     /*border: 2px dashed  #ffffff;
 	box-shadow: 0 0 0 8px #ff0030;*/
+}
+
+/* image on new player form*/
+#logoFormNP {
+	display: block;
+   /* width: 100%;*/
+   /* border-radius: 2%;*/
+    padding-top: 60px;
+    padding-bottom: 60px;
+    /*border: 2px dashed  #ffffff;
+	box-shadow: 0 0 0 8px #ff0030;*/
+}
+
+/* image on returning player form*/
+#logoFormRP {
+	display: block;
+   /* width: 100%;*/
+   /* border-radius: 2%;*/
+    padding-top: 80px;
+    padding-bottom: 80px;
+    /*border: 2px dashed  #ffffff;
+	box-shadow: 0 0 0 8px #ff0030;*/
+}
+
+/* title on forms*/
+#title{
+	color: #669999;
 }
 
 #button {
@@ -41,21 +68,17 @@ body {
 	background: #BAB7A3;
 }
 
+/* white block for new player and returning player form*/
+.login-block {
+	padding-top: 55px;
+}
+
 #playerButtons {
 	margin-top: 10%;
 }
 
-/* form Returning Player*/
+/* form Returning Player and New Player*/
 
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
-.login-block{
-    background: #4FA887;
-background: -webkit-linear-gradient(to bottom, black, white);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, black, white); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-float:left;
-width:100%;
-padding : 50px 0;
-}
 
 .container{background:white; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
 .login-sec{padding: 50px 30px; position:relative;}
@@ -77,6 +100,7 @@ padding : 50px 0;
   -moz-box-shadow: 0px 0px 20px rgba(255,255,255,1);
   box-shadow: 0px 0px 20px rgba(255,255,255,1);
 }
+
 
 /* choose math type */
 

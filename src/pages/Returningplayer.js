@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import logo from "./assets/images/mv.png"
+import logo from "./assets/images/background.svg"
 
 class returningPlayerForm extends React.Component {
 
@@ -81,20 +81,8 @@ render() {
                     <div className="container">
                         <div className="row">
                             <div className="col-md-4 login-sec">
-                                 <h2 className="text-center">Returing Player</h2>
+                                 <h2 id = "title" className="text-center">Returning Player</h2>
                                     <form className="newplayer-form" onSubmit={this.handleSubmit}>
-                                         <div className="form-group">
-                                            <label htmlFor="name" className="text">Name:
-                                            <br></br>
-                                                 <input
-                                                    ref= "name"
-                                                    placeholder= "name"
-                                                    name="name"
-                                                    type= "text"
-                                                    onChange={this.handleInputChange}                                                   
-                                                    value={this.state.name}/>
-                                            </label>
-                                        </div>
                                         <div className="form-group">
                                             <label htmlFor="userName" className="text">Username:
                                             <br></br>
@@ -122,24 +110,9 @@ render() {
                                                     
                                             </label>
                                         </div> 
-
-                                        <div className="form-group">
-                                            <label htmlFor="confirmPassword" className="text"> Confirm Password:
-                                            <br></br>
-                                                <input 
-                                                    placeholder= "confirm password"
-                                                    name= "confirmPassword"
-                                                    type= "password"
-                                                    onChange={this.handleInputChange}
-                                                    value={this.state.confirmPassword}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
-                                                    {this.state.passwordsDontMatch ? <h6> Your passwords do not match.</h6> : ""}
-                                            </label>
-                                        </div>
-
                                     
                                         <div className="form-check">
-                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Enter</button> 
+                                                <button className="btn btn-login float-right" id="btnSubmit" value ="done">Login In</button> 
                                                         {this.state.button 
                                                             ? ''
                                                         
@@ -151,7 +124,7 @@ render() {
                                     </form>
                                 </div>
                                         <div className="col-md-8 banner-sec">
-                            <img id="logo" src={logo} alt="mathventure"></img>
+                            <img id="logoFormRP" src={logo} alt="mathventure"></img>
                    </div>
                </div>
             </div>
