@@ -7,15 +7,15 @@ import "./addition.css"
 //Game difficulty level easy,medium, hard
 class Level extends Component {
 
-//     state={
-//          button1: false,
-//          button2: false,
-//          button3: false
-//         };
+    state={
+         button1: false,
+         button2: false,
+         button3: false
+        };
 
-// levelSelect = (event) => {
-//     // this.props.history.push("/Addition");
-// }
+levelSelect = (event) => {
+    // this.props.history.push("/Addition");
+}
       render(){
         return(
               <div className="btn-group-vertical">

@@ -18,7 +18,9 @@ class returningPlayerForm extends React.Component {
             button: true
         };
 
-    
+    // validatePassword = () => {
+    //     if name === 'password'
+
     handleInputChange = (event) => {
         const {name,value} = event.target;
         let passwordsDontMatch
