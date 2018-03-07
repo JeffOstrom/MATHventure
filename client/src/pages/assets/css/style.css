@@ -112,3 +112,26 @@ body {
 #addition {
 	background-color: #669999;
 }
+
+/*level page styling*/
+.btn-group-vertical{
+    width:100%;
+    text-align: center;
+   
+}
+/*Level page*/
+.col-8{
+    margin:12px auto;
+    width:50%;
+}
+
+/*Level page*/
+#levelh1{
+    margin-top: 20px;
+}
+
+/*background color/text level page*/
+#butL{
+    background:#2E8B57;
+    color: white;
+}

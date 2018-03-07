@@ -17,7 +17,8 @@ class Timer extends Component {
     componentDidUpdate=()=>{
     	if(this.state.time === 0){
     		clearInterval(this.timer);
-    		// this.props.checkAnswer();
+            this.props.checkAnswer();
+           
     	}
 	 }
 
