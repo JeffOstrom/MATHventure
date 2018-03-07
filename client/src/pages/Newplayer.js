@@ -16,6 +16,7 @@ class newPlayerForm extends React.Component {
             checkbox: false,
             email: '',
             passwordsDontMatch: false,
+            passwordLength: '',
             validation: false,
             button: true
         };
@@ -24,6 +25,15 @@ class newPlayerForm extends React.Component {
 
     handleInputChange = (event) => {
         const {name,value} = event.target;
+
+        let passwordLength
+        if (name === "password"){
+            passwordLength > 6 
+            console.log ( "password not long enough")
+        } else {
+            console.log ( "password ok")
+        }
+
         let passwordsDontMatch
         if (name === "password"){
             passwordsDontMatch = value !== this.state.confirmPassword
@@ -33,7 +43,8 @@ class newPlayerForm extends React.Component {
     
         this.setState({
             [name]: value,
-            passwordsDontMatch
+            passwordsDontMatch,
+            passwordLength
         });
     }
 
@@ -128,7 +139,9 @@ render() {
                                                     type= "password"
                                                     onChange={this.handleInputChange}
                                                     value={this.state.password}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/> 
+                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}
+                                                    style={{border:`solid ${this.state.passwordLength ? "red" : "grey"} 1px`}}/> 
+                                                     {this.state.passwordLength ? <h6> Your password is not long enough.</h6> : ""}
                                                     
                                             </label>
                                         </div> 
