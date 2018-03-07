@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "question": "1000 - 110",
+        "choices": [980, 697, 999, 890],
+        "correct": 890
+    },
+    {
+        "id": 2,
+        "question": "400 - 333",
+        "choices": [367, 555, 77, 67],
+        "correct": 67
+    },
+    {
+        "id": 3,
+        "question": "160 - 22",
+        "choices": [60, 140, 122, 138],
+        "correct": 138
+    },
+    {
+        "id": 4,
+        "question": "300 - 4",
+        "choices": [296, 270, 244, 250],
+        "correct": 296
+    },
+    {
+        "id": 5,
+        "question": "200 - 50",
+        "choices": [190, 160, 150, 200],
+        "correct": 150
+    },
+    {
+        "id": 6,
+        "question": "100 - 10",
+        "choices": [90, 80, 20, 88],
+        "correct": 90
+    },
+    {
+        "id": 7,
+        "question": "700 - 54",
+        "choices": [260, 696, 646, 434],
+        "correct": 646
+    },
+    {
+        "id": 8,
+        "question": "440 - 112",
+        "choices": [320, 430, 150, 325],
+        "correct": 328
+    },
+    {
+        "id": 9,
+        "question": "338 - 337",
+        "choices": [4, 3, 2, 1],
+        "correct": 1
+    },
+    {
+        "id": 10,
+        "question": "280 - 232",
+        "choices": [250, 216, 122, 48],
+        "correct": 48
+    }
+]
