@@ -43,6 +43,8 @@ class Addition extends Component {
         let correctPoints = this.state.correct;
         let incorrectPoints = this.state.incorrect;
         let failedattempts = this.state.attempts;
+     
+
 
         if (currentAnswer === correctAnswer.toString()) {
             correctPoints++;

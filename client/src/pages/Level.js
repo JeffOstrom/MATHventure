@@ -28,22 +28,22 @@ levelSelect = (event) => {
 }
       render(){
         return(
-              <div className="btn-group-vertical">
+              <div className="text-center">
       
-                <h1> Select Difficulty Level</h1>
+                <h1 id="levelh1"> Select Difficulty Level</h1>
                         <br></br>
                         <div className="col-8">
-                                    <Link type="button1" className="btn btn-secondary btn-lg btn-block" to="/Addition">
+                                    <Link type="button1" id="butL" className="btn btn btn-lg btn-block" to="/Addition">
                                         Easy
                                     </Link>
                          </div>
                          <div className="col-8">
-                                    <Link type="button2" className="btn btn-secondary btn-lg btn-block" to="/Level">
+                                    <Link type="button2" id="butL" className="btn btn btn-lg btn-block" to="/Level">
                                         Medium
                                     </Link>
                          </div>
                          <div className="col-8">
-                                    <Link type="button3" className="btn btn-secondary btn-lg btn-block" to="/Level">
+                                    <Link type="button3" id="butL" className="btn btn btn-lg btn-block" to="/Level">
                                         Hard
                                     </Link>
                          </div>
