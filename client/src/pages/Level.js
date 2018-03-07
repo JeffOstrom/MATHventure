@@ -10,10 +10,20 @@ class Level extends Component {
     state={
          button1: false,
          button2: false,
-         button3: false
+         button3: false,
+         UserState: " "
         };
 
 levelSelect = (event) => {
+
+    //allow user to select diffuclty based on how many points they have in the DB. Unlock only the buttons which are avaliable. Use state of user in DB
+
+    /* if state of user in DB is _____ change state of button1 to true*/
+    /* if state of user in DB is _____ change state of buttons 1 and 2 to true*/
+    /* if state of user in DB is _____ change state of buttons 1, 2 and 3 to true*/
+
+    // put as onCLick event for each button
+
     // this.props.history.push("/Addition");
 }
       render(){
