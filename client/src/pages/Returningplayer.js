@@ -7,13 +7,8 @@ import logo from "./assets/images/mv.svg"
 class returningPlayerForm extends React.Component {
 
        state={
-            name: '',
             userName: '',
             password: '',
-            confirmPassword: '',
-            checkbox: false,
-            email: '',
-            passwordsDontMatch: false,
             validation: false,
             button: true
         };
@@ -105,8 +100,7 @@ render() {
                                                     name= "password"
                                                     type= "password"
                                                     onChange={this.handleInputChange}
-                                                    value={this.state.password}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/> 
+                                                    value={this.state.password}/>
                                                     
                                             </label>
                                         </div> 
