@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import logo from "./assets/images/mv.svg"
+import logo from "./assets/images/background.svg"
 import axios from 'axios';
 
 
@@ -16,6 +16,7 @@ class newPlayerForm extends React.Component {
             checkbox: false,
             email: '',
             passwordsDontMatch: false,
+            passwordLength: '',
             validation: false,
             button: true
         };
@@ -24,6 +25,15 @@ class newPlayerForm extends React.Component {
 
     handleInputChange = (event) => {
         const {name,value} = event.target;
+
+        let passwordLength
+        if (name === "password"){
+            passwordLength > 6 
+            console.log ( "password not long enough")
+        } else {
+            console.log ( "password ok")
+        }
+
         let passwordsDontMatch
         if (name === "password"){
             passwordsDontMatch = value !== this.state.confirmPassword
@@ -33,7 +43,8 @@ class newPlayerForm extends React.Component {
     
         this.setState({
             [name]: value,
-            passwordsDontMatch
+            passwordsDontMatch,
+            passwordLength
         });
     }
 
@@ -122,14 +133,15 @@ render() {
                                             <label htmlFor="password" className="text">Password:
                                             <br></br>
                                                 <input 
+                                                    minlength = "6"
+                                                    maxlength = "100"
                                                     ref= "password"
                                                     placeholder= "password"
                                                     name= "password"
                                                     type= "password"
                                                     onChange={this.handleInputChange}
                                                     value={this.state.password}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/> 
-                                                    
+                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>         
                                             </label>
                                         </div> 
 
@@ -137,6 +149,8 @@ render() {
                                             <label htmlFor="confirmPassword" className="text"> Confirm Password:
                                             <br></br>
                                                 <input 
+                                                    minlength = "6"
+                                                    maxlength = "100"
                                                     placeholder= "confirm password"
                                                     name= "confirmPassword"
                                                     type= "password"
