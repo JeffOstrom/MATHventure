@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import logo from "./assets/images/mv.svg"
+import logo from "./assets/images/background.svg"
 import axios from 'axios';
 
 
@@ -133,16 +133,15 @@ render() {
                                             <label htmlFor="password" className="text">Password:
                                             <br></br>
                                                 <input 
+                                                    minlength = "6"
+                                                    maxlength = "100"
                                                     ref= "password"
                                                     placeholder= "password"
                                                     name= "password"
                                                     type= "password"
                                                     onChange={this.handleInputChange}
                                                     value={this.state.password}
-                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}
-                                                    style={{border:`solid ${this.state.passwordLength ? "red" : "grey"} 1px`}}/> 
-                                                     {this.state.passwordLength ? <h6> Your password is not long enough.</h6> : ""}
-                                                    
+                                                    style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>         
                                             </label>
                                         </div> 
 
@@ -150,6 +149,8 @@ render() {
                                             <label htmlFor="confirmPassword" className="text"> Confirm Password:
                                             <br></br>
                                                 <input 
+                                                    minlength = "6"
+                                                    maxlength = "100"
                                                     placeholder= "confirm password"
                                                     name= "confirmPassword"
                                                     type= "password"

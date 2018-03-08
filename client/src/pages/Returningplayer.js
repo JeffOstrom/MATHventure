@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import logo from "./assets/images/mv.svg"
+import logo from "./assets/images/background.svg"
 
 class returningPlayerForm extends React.Component {
 
@@ -95,6 +95,8 @@ render() {
                                             <label htmlFor="password" className="text">Password:
                                             <br></br>
                                                 <input 
+                                                    minlength = "6"
+                                                    maxlength = "100"
                                                     ref= "password"
                                                     placeholder= "password"
                                                     name= "password"
