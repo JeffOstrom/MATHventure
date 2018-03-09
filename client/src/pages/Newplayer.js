@@ -26,14 +26,7 @@ class newPlayerForm extends React.Component {
     handleInputChange = (event) => {
         const {name,value} = event.target;
 
-        let passwordLength
-        if (name === "password"){
-            passwordLength > 6 
-            console.log ( "password not long enough")
-        } else {
-            console.log ( "password ok")
-        }
-
+       
         let passwordsDontMatch
         if (name === "password"){
             passwordsDontMatch = value !== this.state.confirmPassword
@@ -44,7 +37,6 @@ class newPlayerForm extends React.Component {
         this.setState({
             [name]: value,
             passwordsDontMatch,
-            passwordLength
         });
     }
 
@@ -133,6 +125,8 @@ render() {
                                             <label htmlFor="username" className="text">Username:
                                             <br></br>
                                                  <input
+                                                    minlength= "6"
+                                                    maxlength= "45"
                                                     ref= "username"
                                                     placeholder= "username"
                                                     name="username"

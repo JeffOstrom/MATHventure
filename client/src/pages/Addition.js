@@ -96,19 +96,19 @@ class Addition extends Component {
             <div className="maindiv">
                 <p className="text-center">{this.state.question}{` = ${this.state.answer}`}</p>
 
-                <RadioButtons
+                <RadioButtons 
                     handleClick={this.handleBtnClick}
                     data-value={this.state.firstChoice}
                 />
-                <RadioButtons
+                <RadioButtons 
                     handleClick={this.handleBtnClick}
                     data-value={this.state.secondChoice}
                 />
-                <RadioButtons
+                <RadioButtons 
                     handleClick={this.handleBtnClick}
                     data-value={this.state.thirdChoice}
                 />
-                <RadioButtons
+                <RadioButtons 
                     handleClick={this.handleBtnClick}
                     data-value={this.state.fourthChoice}
                 />
