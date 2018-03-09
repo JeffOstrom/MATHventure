@@ -1,54 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const validate = require('mongoose-validator-all');
 const bcrypt = require('bcrypt');
 const SALT_WORK_FACTOR = 10;
 
-
-//multivalidation rule object for name and username
-const rules = {
-	name: validate.multiValidate([
-		{
-			validator: 'isLength',
-			arguments: [3, 60],
-			message: 'Name should be between 3 and 60 characters in length.'
-		}, {
-			validator: 'isAlpha',
-			message: 'Name should contain alphabetical characters only.'
-		}
-	]),
-	username: validate.multiValidate({
-		{
-			validator: 'isLength',
-			arguments: [6, 45],
-			message: 'Username should be between 3 and 60 characters in length.'
-		}, {
-			validator: 'isAlphanumeric',
-			message: 'Username should only contain alphanumeric characters.'
-		}
-	}),
-	password: validate.multiValidate({
-		{
-			validator: 'isLength',
-			arguments: [6, 100],
-			message: "Password should be between 3 and 100 characters in length."
-		}
-	}),
-	phone: validate.multiValidate({
-		{
-			validator: 'isLength',
-			arguments: [10, 10]
-			message: 'Phone number should be 10 characters in length.'
-		}
-	})
-};
-
 //establish User schema rules
 userSchema = new Schema({
-	name: { type: String, required: true, validate: rules.name},
-	username: { type: String, required: true, unique: true, validate: rules.usernmae},
-	password: { type: String, required: true, validate: rules.password},
-	phone: { type: Number, required: false, validate: rules.phone},
+	name: { type: String, required: true, minlength: 3, maxlength: 60},
+	username: { type: String, required: true, unique: true, minlength: 6, maxlength: 45},
+	password: { type: String, required: true, minlength: 6, maxlength: 100},
+	phone: { type: Number, required: false, minlength: 10, maxlength: 10},
 	addProgress: { type: Number, required: true, default: 1},
 	subProgress: { type: Number, required: true, default: 1},
 	mulProgress: { type: Number, required: true, default: 1},

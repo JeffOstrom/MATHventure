@@ -31,6 +31,9 @@ router.post("/api/users", function(req, res) {
         .create(user)
         .then(dbUser => { console.log(dbUser); res.json(dbUser) })
         .catch(err => res.status(422).json(err));
+
+    req.session.name = username;
+            req.send(req.session.name);
   });
   
   module.exports = router;

@@ -5,11 +5,12 @@ var cookieParser = require('cookie-parser');
 var session = require("express-session");
 const route1 = require("./controllers/userController.js");
 const route2 = require("./controllers/userLogin.js")
+var secret = require("./env.js")
 const app = express();
 const PORT = process.env.PORT || 3030;
 
 app.use(cookieParser());
-app.use(session({secret: process.env.SESSION_SECRET}))
+app.use(session({secret: process.env.secret}))
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));

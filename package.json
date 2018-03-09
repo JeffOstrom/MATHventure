@@ -13,6 +13,7 @@
   },
   "author": "",
   "license": "ISC",
+  "secret": "4zOlASpHg4WnTu0MEW28QQ9RO6W20REu",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
