@@ -84,13 +84,26 @@ class newPlayerForm extends React.Component {
 
     // Method that handles the save user button. This is the submit button.
     handleUserSave = () => {
-        axios.post('/api/users', {
-            name: this.state.name,
-            username: this.state.userName,
-            password: this.state.password
-        }).then(res => {
-            console.log(res);
-        }).catch(err => console.log(err));
+        if (this.state.email !== null) {
+            axios.post('/api/users', {
+                name: this.state.name,
+                username: this.state.username,
+                password: this.state.password,
+                email: this.state.email
+            }).then(res => {
+                console.log(res);
+            }).catch(err => console.log(err));
+        }
+        else {
+            axios.post('/api/users', {
+                name: this.state.name,
+                username: this.state.username,
+                password: this.state.password
+            }).then(res => {
+                console.log(res);
+            }).catch(err => console.log(err));
+        }
+        
     };
 
 render() {
@@ -117,15 +130,15 @@ render() {
                                             </label>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="userName" className="text">Username:
+                                            <label htmlFor="username" className="text">Username:
                                             <br></br>
                                                  <input
                                                     ref= "username"
                                                     placeholder= "username"
-                                                    name="userName"
+                                                    name="username"
                                                     type= "text"
                                                     onChange={this.handleInputChange}
-                                                    value={this.state.userName}/>
+                                                    value={this.state.username}/>
                                             </label>
                                         </div>
 

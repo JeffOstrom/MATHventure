@@ -7,12 +7,23 @@ router.post("/api/users", function(req, res) {
     console.log(req.body);
     console.log("work");
 
+    if (req.body.email === null) {
+        const user = {
+            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+        };
+    }
+    else {
+        const user = {
+            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+            parentEmail: req.body.email
+        }
+    }
     // creating a user object
-    const user = {
-        name: req.body.name,
-        username: req.body.username,
-        password: req.body.password,
-    };
+    
     console.log(user.username);
 
     // using the db we required and creating it with the user object
