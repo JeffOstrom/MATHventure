@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import logo from "./assets/images/background.svg"
+import logo from "./assets/images/background.svg";
 import axios from 'axios';
 
 
@@ -10,7 +10,7 @@ class newPlayerForm extends React.Component {
 
        state={
             name: '',
-            userName: '',
+            username: '',
             password: '',
             confirmPassword: '',
             checkbox: false,
@@ -53,7 +53,7 @@ class newPlayerForm extends React.Component {
             this.setState({passwordsDontMatch:true})
         }
 
-          if (this.state.name !== '' && this.state.userName !== '' && this.state.password !== '' && this.state.password === this.state.confirmPassword){
+          if (this.state.name !== '' && this.state.username !== '' && this.state.password !== '' && this.state.password === this.state.confirmPassword){
             this.setState({button: true})
             this.props.history.push("/mathtype");
         } else {
