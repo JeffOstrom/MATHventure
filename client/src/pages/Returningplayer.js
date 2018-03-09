@@ -7,7 +7,7 @@ import logo from "./assets/images/background.svg"
 class returningPlayerForm extends React.Component {
 
        state={
-            userName: '',
+            username: '',
             password: '',
             validation: false,
             button: true
@@ -38,6 +38,12 @@ class returningPlayerForm extends React.Component {
         //console.log(this.state.password,this.state.confirmPassword)
         if(this.state.password === this.state.confirmPassword){
             this.setState({passwordsDontMatch:false})
+            axios.post('/api/login', {
+                username: this.state.username,
+                password: this.state.password
+            }).then(res => {
+                console.log(res);
+            }).catch(err => console.log(err));
             //console.log('they match');
         } else {
            //console.log ('they dont match');
@@ -54,7 +60,6 @@ class returningPlayerForm extends React.Component {
         }
 
     }
-
 
     emailConfirm= (event)  => {
         event.preventDefault();
@@ -79,7 +84,7 @@ render() {
                                  <h2 id = "title" className="text-center">Returning Player</h2>
                                     <form className="newplayer-form" onSubmit={this.handleSubmit}>
                                         <div className="form-group">
-                                            <label htmlFor="userName" className="text">Username:
+                                            <label htmlFor="username" className="text">Username:
                                             <br></br>
                                                  <input
                                                     ref= "username"

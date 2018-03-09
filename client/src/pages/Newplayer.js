@@ -14,7 +14,7 @@ class newPlayerForm extends React.Component {
             password: '',
             confirmPassword: '',
             checkbox: false,
-            email: '',
+            phone: '',
             passwordsDontMatch: false,
             passwordLength: '',
             validation: false,
@@ -26,14 +26,7 @@ class newPlayerForm extends React.Component {
     handleInputChange = (event) => {
         const {name,value} = event.target;
 
-        let passwordLength
-        if (name === "password"){
-            passwordLength > 6 
-            console.log ( "password not long enough")
-        } else {
-            console.log ( "password ok")
-        }
-
+       
         let passwordsDontMatch
         if (name === "password"){
             passwordsDontMatch = value !== this.state.confirmPassword
@@ -44,7 +37,6 @@ class newPlayerForm extends React.Component {
         this.setState({
             [name]: value,
             passwordsDontMatch,
-            passwordLength
         });
     }
 
@@ -72,7 +64,7 @@ class newPlayerForm extends React.Component {
     }
 
 
-    emailConfirm= (event)  => {
+    phoneConfirm= (event)  => {
         event.preventDefault();
         if(this.checkbox = true){
             this.setState({checkbox: true})
@@ -84,13 +76,26 @@ class newPlayerForm extends React.Component {
 
     // Method that handles the save user button. This is the submit button.
     handleUserSave = () => {
-        axios.post('/api/users', {
-            name: this.state.name,
-            username: this.state.userName,
-            password: this.state.password
-        }).then(res => {
-            console.log(res);
-        }).catch(err => console.log(err));
+        if (this.state.phone !== null) {
+            axios.post('/api/users', {
+                name: this.state.name,
+                username: this.state.username,
+                password: this.state.password,
+                phone: this.state.phone
+            }).then(res => {
+                console.log(res);
+            }).catch(err => console.log(err));
+        }
+        else {
+            axios.post('/api/users', {
+                name: this.state.name,
+                username: this.state.username,
+                password: this.state.password
+            }).then(res => {
+                console.log(res);
+            }).catch(err => console.log(err));
+        }
+        
     };
 
 render() {
@@ -117,15 +122,17 @@ render() {
                                             </label>
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="userName" className="text">Username:
+                                            <label htmlFor="username" className="text">Username:
                                             <br></br>
                                                  <input
+                                                    minlength= "6"
+                                                    maxlength= "45"
                                                     ref= "username"
                                                     placeholder= "username"
-                                                    name="userName"
+                                                    name="username"
                                                     type= "text"
                                                     onChange={this.handleInputChange}
-                                                    value={this.state.userName}/>
+                                                    value={this.state.username}/>
                                             </label>
                                         </div>
 
@@ -162,8 +169,8 @@ render() {
                                         </div>
 
                                      <div className="form-check">
-                                                <label htmlFor="checkbox" className="checkbox" onChange={this.emailConfirm}>Please check this box if the parent would 
-                                                like a progress report emailed.
+                                                <label htmlFor="checkbox" className="checkbox" onChange={this.phoneConfirm}>Please check this box if the parent would 
+                                                like a progress report texted to their cellphone.
                                                  <input 
                                                     name= "checkbox"
                                                     type= "checkbox"
@@ -172,13 +179,13 @@ render() {
                                                     style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
                                                     {this.state.checkbox ?
                                                         <div className="form-group">
-                                                            <label htmlFor="checkbox" className="email">Parents Email address:
+                                                            <label htmlFor="checkbox" className="phone">Parent Phone Number:
                                                                  <input 
-                                                                    placeholder= "parent@email.com"
-                                                                    name= "email"
-                                                                    type= "email"
+                                                                    placeholder= "xxxxxxxxxx"
+                                                                    name= "phone"
+                                                                    type= "phone"
                                                                     onChange={this.handleInputChange}
-                                                                    value={this.state.email}/>
+                                                                    value={this.state.phone}/>
                                                             </label>
                                                         </div>
                                                         
