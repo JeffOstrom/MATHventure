@@ -6,6 +6,7 @@ import "./assets/css/style.css";
 
 //Results page. How many answer correct/incorrect
 class Results extends Component {
+
     render(){
       return(
         <div class="jumbotron jumbotron-fluid">

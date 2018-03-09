@@ -7,7 +7,7 @@ router.post("/api/users", function(req, res) {
     console.log(req.body);
     console.log("work");
 
-    if (req.body.email === null) {
+    if (req.body.phone === null) {
         const user = {
             name: req.body.name,
             username: req.body.username,
@@ -19,7 +19,7 @@ router.post("/api/users", function(req, res) {
             name: req.body.name,
             username: req.body.username,
             password: req.body.password,
-            parentEmail: req.body.email
+            phoneNumber: req.body.phone
         }
     }
     // creating a user object

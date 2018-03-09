@@ -34,9 +34,10 @@ const rules = {
 			message: "Password should be between 3 and 100 characters in length."
 		}
 	}),
-	email: validate.multiValidate({
+	phone: validate.multiValidate({
 		{
-			validator: 'isEmail',
+			validator: 'isLength',
+			arguments: [10, 10]
 			message: 'Parents email requires a valid email address to continue.'
 		}
 	})
@@ -47,8 +48,7 @@ userSchema = new Schema({
 	name: { type: String, required: true, validate: rules.name},
 	username: { type: String, required: true, unique: true, validate: rules.usernmae},
 	password: { type: String, required: true, validate: rules.password},
-	watchdogBool: { type: Boolean, required: true },
-	parentEmail: { type: Boolean, required: false, validate: rules.email},
+	phoneNumber: { type: Number, required: false, validate: rules.email},
 	addProgress: { type: Number, required: true, default: 1},
 	subProgress: { type: Number, required: true, default: 1},
 	mulProgress: { type: Number, required: true, default: 1},

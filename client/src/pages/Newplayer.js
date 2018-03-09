@@ -72,7 +72,7 @@ class newPlayerForm extends React.Component {
     }
 
 
-    emailConfirm= (event)  => {
+    phoneConfirm= (event)  => {
         event.preventDefault();
         if(this.checkbox = true){
             this.setState({checkbox: true})
@@ -84,12 +84,12 @@ class newPlayerForm extends React.Component {
 
     // Method that handles the save user button. This is the submit button.
     handleUserSave = () => {
-        if (this.state.email !== null) {
+        if (this.state.phone !== null) {
             axios.post('/api/users', {
                 name: this.state.name,
                 username: this.state.username,
                 password: this.state.password,
-                email: this.state.email
+                email: this.state.phone
             }).then(res => {
                 console.log(res);
             }).catch(err => console.log(err));
@@ -175,8 +175,8 @@ render() {
                                         </div>
 
                                      <div className="form-check">
-                                                <label htmlFor="checkbox" className="checkbox" onChange={this.emailConfirm}>Please check this box if the parent would 
-                                                like a progress report emailed.
+                                                <label htmlFor="checkbox" className="checkbox" onChange={this.phoneConfirm}>Please check this box if the parent would 
+                                                like a progress report texted to their cellphone.
                                                  <input 
                                                     name= "checkbox"
                                                     type= "checkbox"
@@ -185,13 +185,13 @@ render() {
                                                     style={{border:`solid ${this.state.passwordsDontMatch ? "red" : "grey"} 1px`}}/>
                                                     {this.state.checkbox ?
                                                         <div className="form-group">
-                                                            <label htmlFor="checkbox" className="email">Parents Email address:
+                                                            <label htmlFor="checkbox" className="phone">Parent Phone Number:
                                                                  <input 
-                                                                    placeholder= "parent@email.com"
-                                                                    name= "email"
-                                                                    type= "email"
+                                                                    placeholder= "xxxxxxxxxx"
+                                                                    name= "phone"
+                                                                    type= "phone"
                                                                     onChange={this.handleInputChange}
-                                                                    value={this.state.email}/>
+                                                                    value={this.state.phone}/>
                                                             </label>
                                                         </div>
                                                         
