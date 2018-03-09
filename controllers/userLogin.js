@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const SALT_WORK_FACTOR = 10;
 
 // creating a post route to '/api/users'
-router.post("/api/login", function(req, res) {
+router.get("/api/login", function(req, res) {
     var username = req.body.username;
     var password = req.body.password;
 
