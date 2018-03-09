@@ -14,7 +14,7 @@ class newPlayerForm extends React.Component {
             password: '',
             confirmPassword: '',
             checkbox: false,
-            email: '',
+            phone: '',
             passwordsDontMatch: false,
             passwordLength: '',
             validation: false,

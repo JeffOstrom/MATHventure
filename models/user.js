@@ -48,7 +48,7 @@ userSchema = new Schema({
 	name: { type: String, required: true, validate: rules.name},
 	username: { type: String, required: true, unique: true, validate: rules.usernmae},
 	password: { type: String, required: true, validate: rules.password},
-	phoneNumber: { type: Number, required: false, validate: rules.email},
+	phone: { type: Number, required: false, validate: rules.phone},
 	addProgress: { type: Number, required: true, default: 1},
 	subProgress: { type: Number, required: true, default: 1},
 	mulProgress: { type: Number, required: true, default: 1},

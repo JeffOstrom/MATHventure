@@ -19,7 +19,7 @@ router.post("/api/users", function(req, res) {
             name: req.body.name,
             username: req.body.username,
             password: req.body.password,
-            phoneNumber: req.body.phone
+            phone: req.body.phone
         }
     }
     // creating a user object
