@@ -38,7 +38,7 @@ const rules = {
 		{
 			validator: 'isLength',
 			arguments: [10, 10]
-			message: 'Parents email requires a valid email address to continue.'
+			message: 'Phone number should be 10 characters in length.'
 		}
 	})
 };
