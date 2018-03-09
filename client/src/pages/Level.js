@@ -1,8 +1,9 @@
-import React, {Component} from "react";
+ import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import "./assets/css/style.css";
-import "./addition.css"
+import "./addition.css";
+import logo from "./assets/images/background.svg"
 
 //Game difficulty level easy,medium, hard
 class Level extends Component {
@@ -28,26 +29,37 @@ levelSelect = (event) => {
 }
       render(){
         return(
-              <div className="text-center">
-      
-                <h1 id="levelh1"> Select Difficulty Level</h1>
-                        <br></br>
-                        <div className="col-8">
-                                    <Link type="button1" id="butL" className="btn btn btn-lg btn-block" to="/Addition">
+             
+        <section className="login-block" id="mathLevelLogin">
+            <div className="container">
+                <div className="col-sm-12">
+                    <img id="logoMathLevel" src={logo} alt="mathventure" align="center"></img>
+                </div>    
+                <div className="row">
+                    <div className="col login-sec" align= "center">
+                        <h2 id="textMathLevel" className="text-center">Select a difficulty level.</h2>
+                            <div className="col-8">
+                                    <Link type="button1" id="buttonLevel" className="btn btn btn-lg btn-block" to="/Addition">
                                         Easy
                                     </Link>
                          </div>
                          <div className="col-8">
-                                    <Link type="button2" id="butL" className="btn btn btn-lg btn-block" to="/Level">
+                                    <Link type="button2" id="buttonLevel" className="btn btn btn-lg btn-block" to="/Level">
                                         Medium
                                     </Link>
                          </div>
                          <div className="col-8">
-                                    <Link type="button3" id="butL" className="btn btn btn-lg btn-block" to="/Level">
+                                    <Link type="button3" id="buttonLevel" className="btn btn btn-lg btn-block" to="/Level">
                                         Hard
                                     </Link>
                          </div>
-              </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+              
         );
    }
 }
