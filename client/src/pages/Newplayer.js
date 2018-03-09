@@ -81,7 +81,7 @@ class newPlayerForm extends React.Component {
                 name: this.state.name,
                 username: this.state.username,
                 password: this.state.password,
-                email: this.state.phone
+                phone: this.state.phone
             }).then(res => {
                 console.log(res);
             }).catch(err => console.log(err));
