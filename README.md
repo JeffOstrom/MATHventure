@@ -18,7 +18,6 @@ MATHventure
 ## Resources
 + [Icons](https://fontawesome.com/)
 + [Fonts](https://fonts.google.com/)
-+ [Animate.css](https://daneden.github.io/animate.css/)
 + [Adobe Illustrator]()
 
 ## Node Package Reference
