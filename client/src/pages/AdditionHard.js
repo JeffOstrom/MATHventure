@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import RadioButtons from "../components/RadioButtons";
 import { Link } from "react-router-dom";
 import "./addition.css"
-import additionprobs from "../additionproblems.json"
+import additionprobs3 from "../additionproblems3.json"
 import Timer from "../components/Timer/timer.js";
 
 
-class Addition extends Component {
+class AdditionHard extends Component {
     state = {
-        additionprobs,
+        additionprobs3,
         answer: "?",
         modal: "",
         question: "",
@@ -42,7 +42,7 @@ class Addition extends Component {
         let correctPoints = this.state.correct;
         let incorrectPoints = this.state.incorrect;
         let failedattempts = this.state.attempts;
-        const array = this.state.additionprobs;
+        const array = this.state.additionprobs3;
 
         correctAnswer = array[this.state.iterator].correct;
 
@@ -73,7 +73,10 @@ class Addition extends Component {
             if (failedattempts === 1) {
                 this.setState({modal: "YOU HAVE RAN OUT OF ATTEMPTS!"});
                 incorrectPoints++;
-                this.setState({ incorrect: incorrectPoints });
+                this.setState({
+                    incorrect: incorrectPoints,
+                    attempts: 0
+                });
                 this.setState(prevState => {
                     return { 
                         iterator: prevState.iterator + 1,
@@ -96,12 +99,12 @@ class Addition extends Component {
     };
 
     componentDidMount() {
-        const array = this.state.additionprobs;
+        const array = this.state.additionprobs3;
         this.setState({ correctAnswer: array[this.state.iterator].correct })
     };
 
     render() {
-        const array = this.state.additionprobs;
+        const array = this.state.additionprobs3;
 
         return(
             <div className="maindiv">
@@ -180,4 +183,4 @@ class Addition extends Component {
     }
 }
 
-export default Addition;
+export default AdditionHard;

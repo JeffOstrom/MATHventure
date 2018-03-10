@@ -1,14 +1,16 @@
 import React, { Component } from "react";
 import RadioButtons from "../components/RadioButtons";
-import { Link } from "react-router-dom";
+// import SubmitBtn from "../components/SubmitBtn";
+// import { Link } from "react-router-dom";
 import "./addition.css"
-import additionprobs from "../additionproblems.json"
+// import CorrectModal from "../components/CorrectModal";
+import divisionprobs3 from "../divisionproblem3.json"
 import Timer from "../components/Timer/timer.js";
 
 
-class Addition extends Component {
+class DivisionHard extends Component {
     state = {
-        additionprobs,
+        divisionprobs3,
         answer: "?",
         modal: "",
         question: "",
@@ -19,68 +21,40 @@ class Addition extends Component {
         correctAnswer: 0,
         correct: 0,
         incorrect: 0,
-        attempts: 0,
-        time: 30,
-        iterator: 0,
-        correcttally: "",
-        incorrecttally: "",
-        finished: ""
+        attempts: 0
     };
 
 
 
     handleBtnClick = event => {
+        console.log(event);
         // this should get the data value of the clicked button
         const btnType = event.target.getAttribute("data-value");
+        // console.log(btnType);
 
-        this.setState({answer: btnType});
+        // don't need to set this to state
+            this.setState({answer: btnType});
+        console.log(this.state.answer);
     }
 
     checkAnswer = () => {
         const currentAnswer = this.state.answer;
-        let correctAnswer = this.state.correctAnswer;
+        const correctAnswer = this.state.correctAnswer;
         let correctPoints = this.state.correct;
         let incorrectPoints = this.state.incorrect;
         let failedattempts = this.state.attempts;
-        const array = this.state.additionprobs;
-
-        correctAnswer = array[this.state.iterator].correct;
 
         if (currentAnswer === correctAnswer.toString()) {
             correctPoints++;
-            if (this.state.iterator === array.length - 1) {
-                this.setState({ iterator: 0 });
-                this.setState({ answer: "?" })
-                this.setState({ 
-                    modal: "You have completed this level!",
-                    correcttally: "Total Correct: " + correctPoints,
-                    incorrecttally: "Total Incorrect: " + incorrectPoints,
-                    finished: "Choose your next MATHventure! Or try this level again!"
-                });
-            } else {
-                this.setState({ modal: "CORRECT!" });
-                this.setState({ correct: correctPoints });
-                this.setState(prevState => {
-                    return { 
-                        iterator: prevState.iterator + 1,
-                        answer: "?", 
-                    }
-                });
-            }
-            
-            this.setState({ correctAnswer: array[this.state.iterator].correct })
+            this.setState({ modal: "CORRECT!" });
+            // can do several things to move on with this page and the correct points and how we want to handle the questions
+            // but maybe for now, what we can do is if the answer is correct, add it to the page and then when correct reaches a certain point, we can send the user to a new page
+            this.setState({ correct: correctPoints });
         } else {
             if (failedattempts === 1) {
                 this.setState({modal: "YOU HAVE RAN OUT OF ATTEMPTS!"});
                 incorrectPoints++;
                 this.setState({ incorrect: incorrectPoints });
-                this.setState(prevState => {
-                    return { 
-                        iterator: prevState.iterator + 1,
-                        answer: "?", 
-                    }
-                });
-                this.setState({ correctAnswer: array[this.state.iterator].correct })
             } else {
                 this.setState({modal: "INCORRECT! Try again."});
                 failedattempts++;
@@ -93,35 +67,48 @@ class Addition extends Component {
     submitBtnClick = event => {
         event.preventDefault();
         this.checkAnswer();
+        
+        // if answer is correct with the submit btn
+        // then display the correct modal
+        // else 
+        // display the incorrect modal
     };
 
     componentDidMount() {
-        const array = this.state.additionprobs;
-        this.setState({ correctAnswer: array[this.state.iterator].correct })
+        // figure out how to assign object in state to value of another object in state
+        // this.setState({currentProblem.firstNum: this.state.answers[0].firstNum});
+        const random = this.state.divisionprobs3[Math.floor(Math.random() * this.state.divisionprobs3.length)];
+
+        this.setState({ question: random.question});
+        this.setState({ 
+            firstChoice: random.choices[0], 
+            secondChoice: random.choices[1],
+            thirdChoice: random.choices[2],
+            fourthChoice: random.choices[3]
+        });
+        this.setState({ correctAnswer: random.correct })
     };
 
     render() {
-        const array = this.state.additionprobs;
-
         return(
             <div className="maindiv">
-                <p className="question text-center">{array[this.state.iterator].question}{` = ${this.state.answer}`}</p>
+                <p className="text-center">{this.state.question}{` = ${this.state.answer}`}</p>
 
                 <RadioButtons
                     handleClick={this.handleBtnClick}
-                    data-value={array[this.state.iterator].choices[0]}
+                    data-value={this.state.firstChoice}
                 />
                 <RadioButtons
                     handleClick={this.handleBtnClick}
-                    data-value={array[this.state.iterator].choices[1]}
+                    data-value={this.state.secondChoice}
                 />
                 <RadioButtons
                     handleClick={this.handleBtnClick}
-                    data-value={array[this.state.iterator].choices[2]}
+                    data-value={this.state.thirdChoice}
                 />
                 <RadioButtons
                     handleClick={this.handleBtnClick}
-                    data-value={array[this.state.iterator].choices[3]}
+                    data-value={this.state.fourthChoice}
                 />
                 <br />
                 <br />
@@ -140,30 +127,29 @@ class Addition extends Component {
                 <br />
                 <br />
 
-                {/* <div id="tally" className="jumbotron">
+                <div id="tally" className="jumbotron">
                     <h1>Correct: {this.state.correct}</h1>
                     <br />
                     <br />
                     <h1>Incorrect: {this.state.incorrect}</h1>
-                </div> */}
-                <div className="col-8">
-                    <Link type="button1" id="buttonLevel" className="btn btn btn-lg btn-block" to="/Mathtype">
-                        Choose your MATHventure!
-                    </Link>
                 </div>
-                {/* <div>
+
+                <div>
                 <h2> Time Remaining: <Timer time={10} checkAnswer={this.checkAnswer}/> </h2>
-                </div> */}
+                </div>
 
 
                 <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
+                        <div className="modal-header">
+                            <h5 className="modal-title text-center" id="exampleModalLabel">{this.state.modal}</h5>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
                         <div className="modal-body">
-                            <h3>{this.state.modal}</h3>
-                            <h3>{this.state.correcttally}</h3>
-                            <h3>{this.state.incorrecttally}</h3>
-                            <h3>{this.state.finished}</h3>
+                            <h3>Your answer was {this.state.answer}.</h3>
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -180,4 +166,4 @@ class Addition extends Component {
     }
 }
 
-export default Addition;
+export default DivisionHard;

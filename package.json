@@ -13,14 +13,22 @@
   },
   "author": "",
   "license": "ISC",
+  "secret": "4zOlASpHg4WnTu0MEW28QQ9RO6W20REu",
   "devDependencies": {
     "concurrently": "^3.5.0",
     "nodemon": "^1.11.0"
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "bcrypt": "^1.0.3",
     "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.1",
     "express": "^4.15.4",
-    "mongoose": "^4.11.7"
+    "express-session": "^1.15.6",
+    "mongoose": "^4.11.7",
+    "mongoose-validator-all": "^1.4.0",
+    "path": "^0.12.7",
+    "router": "^1.3.2"
   }
 }

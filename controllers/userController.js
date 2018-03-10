@@ -7,12 +7,23 @@ router.post("/api/users", function(req, res) {
     console.log(req.body);
     console.log("work");
 
+    if (req.body.phone === null) {
+        const user = {
+            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+        };
+    }
+    else {
+        const user = {
+            name: req.body.name,
+            username: req.body.username,
+            password: req.body.password,
+            phone: req.body.phone
+        }
+    }
     // creating a user object
-    const user = {
-        name: req.body.name,
-        username: req.body.username,
-        password: req.body.password,
-    };
+    
     console.log(user.username);
 
     // using the db we required and creating it with the user object
@@ -20,6 +31,9 @@ router.post("/api/users", function(req, res) {
         .create(user)
         .then(dbUser => { console.log(dbUser); res.json(dbUser) })
         .catch(err => res.status(422).json(err));
+
+    req.session.name = username;
+            req.send(req.session.name);
   });
   
   module.exports = router;

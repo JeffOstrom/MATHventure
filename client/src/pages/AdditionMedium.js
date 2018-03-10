@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import RadioButtons from "../components/RadioButtons";
 import { Link } from "react-router-dom";
 import "./addition.css"
-import additionprobs from "../additionproblems.json"
+import additionprobs2 from "../additionproblems2.json"
 import Timer from "../components/Timer/timer.js";
 
 
-class Addition extends Component {
+class AdditionMedium extends Component {
     state = {
-        additionprobs,
+        additionprobs2,
         answer: "?",
         modal: "",
         question: "",
@@ -42,7 +42,7 @@ class Addition extends Component {
         let correctPoints = this.state.correct;
         let incorrectPoints = this.state.incorrect;
         let failedattempts = this.state.attempts;
-        const array = this.state.additionprobs;
+        const array = this.state.additionprobs2;
 
         correctAnswer = array[this.state.iterator].correct;
 
@@ -96,12 +96,12 @@ class Addition extends Component {
     };
 
     componentDidMount() {
-        const array = this.state.additionprobs;
+        const array = this.state.additionprobs2;
         this.setState({ correctAnswer: array[this.state.iterator].correct })
     };
 
     render() {
-        const array = this.state.additionprobs;
+        const array = this.state.additionprobs2;
 
         return(
             <div className="maindiv">
@@ -180,4 +180,4 @@ class Addition extends Component {
     }
 }
 
-export default Addition;
+export default AdditionMedium;
