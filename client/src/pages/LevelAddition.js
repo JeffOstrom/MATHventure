@@ -6,7 +6,7 @@ import "./addition.css";
 import logo from "./assets/images/background.svg"
 
 //Game difficulty level easy,medium, hard
-class Level extends Component {
+class LevelAddition extends Component {
 
     state={
          button1: false,
@@ -39,17 +39,17 @@ levelSelect = (event) => {
                     <div className="col login-sec" align= "center">
                         <h2 id="textMathLevel" className="text-center">Select a difficulty level.</h2>
                             <div className="col-8">
-                                    <Link type="button1" id="buttonLevel" className="btn btn btn-lg btn-block" to="/Division">
+                                    <Link type="button1" id="buttonLevel" className="btn btn btn-lg btn-block" to="/Addition">
                                         Easy
                                     </Link>
                          </div>
                          <div className="col-8">
-                                    <Link type="button2" id="buttonLevel" className="btn btn btn-lg btn-block" to="/DivisionMedium">
+                                    <Link type="button2" id="buttonLevel" className="btn btn btn-lg btn-block" to="/AdditionMedium">
                                         Medium
                                     </Link>
                          </div>
                          <div className="col-8">
-                                    <Link type="button3" id="buttonLevel" className="btn btn btn-lg btn-block" to="/DivisionHard">
+                                    <Link type="button3" id="buttonLevel" className="btn btn btn-lg btn-block" to="/AdditionHard">
                                         Hard
                                     </Link>
                          </div>
@@ -64,6 +64,6 @@ levelSelect = (event) => {
    }
 }
 
-export default Level;
+export default LevelAddition;
 
 
