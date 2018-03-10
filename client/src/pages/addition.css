@@ -68,7 +68,20 @@ body{
 	background-color: #669999;
 }
 
+.modal {
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	top: 50%; 
+	margin-left: -150px;
+	margin-top: -150px;
+ }
+
 .modal-header, .modal-footer{
 	background-color: #BAB7A3;
 }
 
+.question {
+	margin-top: 150px;
+}
